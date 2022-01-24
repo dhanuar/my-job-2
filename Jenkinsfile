@@ -31,7 +31,7 @@ pipeline{
                 branch "develop"
             }
             steps{
-              echo "nexus upload artifacts..."
+              nexusArtifactUploader artifacts: [[artifactId: 'myweb', classifier: '', file: 'target/myweb-0.0.5.war', type: 'war']], credentialsId: 'nexus3', groupId: 'in.javahome', nexusUrl: '172.31.42.193:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven--app', version: '0.0.5'
             }
         }
         stage("deploy to qa"){
