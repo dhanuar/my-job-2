@@ -47,10 +47,10 @@ pipeline{
         }
         stage("nexus"){
             when{
-                branch "develop34"
+                branch "develop"
             }
             steps{
-             nexusArtifactUploader artifacts: [[artifactId: 'myweb', classifier: '', file: 'target/myweb-0.0.6.war', type: 'war']], credentialsId: 'nexus3', groupId: 'in.javahome', nexusUrl: '172.31.42.193:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-app2', version: '0.0.6'
+              echo "nexus upload artifacts..."
             }
         }
         stage("deploy to qa"){
