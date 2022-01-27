@@ -23,7 +23,7 @@ pipeline{
                 }
             }
             steps{
-              withSonarQubeEnv( 'sonar7') {
+              withSonarQubeEnv('sonar7') {
               sh "mvn sonar:sonar"
              }
             }
