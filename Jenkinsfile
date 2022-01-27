@@ -44,7 +44,6 @@ pipeline{
                     }
                 }
             }
-        }
         stage("nexus"){
             when{
                 branch "develop34"
